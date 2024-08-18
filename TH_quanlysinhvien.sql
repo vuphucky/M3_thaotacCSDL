@@ -82,3 +82,37 @@ where C.ClassName = "A1";
 select S.StudentID, S.StudentName, SUB.SubName, M.Mark
 from student s join Mark M on S.StudentID = M.StudentID join subject SUB on SUB.SubID
 where SUB.SubName = "CF";
+
+select *
+from student 
+where StudentName like "h%";
+
+select * 
+from class
+where month(class.StartDate) = 12;
+
+select*
+from subject;
+
+select *
+from subject
+where Credit between 3 and 5;
+
+
+update student
+set ClassID = 2
+where StudentID = 1;
+
+SELECT 
+    student.StudentName, subject.SubName, mark.Mark
+FROM
+    student
+        JOIN
+    mark ON student.StudentID = mark.StudentID
+        JOIN
+    subject ON mark.SubID = subject.SubID
+ORDER BY mark.Mark DESC;
+
+select student.StudentName, mark.Mark
+from student
+join mark on student.StudentID = mark.StudentID;
